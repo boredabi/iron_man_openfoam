@@ -1,0 +1,31 @@
+//    _/_/_/_/                                                   
+//   _/        _/_/_/    _/_/_/      _/_/    _/      _/    _/_/_/
+//  _/_/_/    _/    _/  _/    _/  _/    _/  _/      _/  _/    _/ 
+// _/        _/    _/  _/    _/  _/    _/    _/  _/    _/    _/  
+//_/_/_/_/  _/    _/  _/    _/    _/_/        _/        _/_/_/   
+//
+// Ennova CFD to FOAM Converter
+// Copyright (C) 2023 Ennova Technologies Inc.
+// Build Version 1.9.2 - win64 7/20/2023
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FoamFile {
+	version 2.0;
+	format ascii;
+	class polyBoundaryMesh;
+	location "constant/polyMesh";
+	object boundary;
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2(
+	im{
+		type patch;
+		startFace 2201031;
+		nFaces 50780;
+	}
+	domain{
+		type patch;
+		startFace 2251811;
+		nFaces 6101;
+	}
+)
+//~~~ end of file ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

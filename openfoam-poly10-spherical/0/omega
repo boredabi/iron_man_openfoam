@@ -1,0 +1,40 @@
+//     _/_/_/_/                                                    
+//    _/        _/_/_/    _/_/_/      _/_/    _/      _/    _/_/_/ 
+//   _/_/_/    _/    _/  _/    _/  _/    _/  _/      _/  _/    _/  
+//  _/        _/    _/  _/    _/  _/    _/    _/  _/    _/    _/   
+// _/_/_/_/  _/    _/  _/    _/    _/_/        _/        _/_/_/    
+//
+// Ennova CFD to FOAM Converter
+// Copyright (C) 2023 Ennova Technologies Inc. (www.ennova-cfd.com)
+// Build Version 1.9.2 - win64 7/20/2023
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FoamFile
+{
+	version    2.0;
+	format    ascii;
+	class    volScalarField;
+	object    omega;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+dimensions    [ 0 0 -1 0 0 0 0 ];
+internalField    uniform 6.7082e-05;
+boundaryField
+{
+	#includeEtc    "caseDicts/setConstraintTypes";
+	im
+	{
+		type    turbulentMixingLengthFrequencyInlet;
+		mixingLength    0.01;
+		value    uniform 0.67082;
+	}
+
+	domain
+	{
+		type    omegaWallFunction;
+		blending    binomial;
+		value    uniform 6.7082e-05;
+	}
+
+}
+
