@@ -1,0 +1,36 @@
+//     _/_/_/_/                                                    
+//    _/        _/_/_/    _/_/_/      _/_/    _/      _/    _/_/_/ 
+//   _/_/_/    _/    _/  _/    _/  _/    _/  _/      _/  _/    _/  
+//  _/        _/    _/  _/    _/  _/    _/    _/  _/    _/    _/   
+// _/_/_/_/  _/    _/  _/    _/    _/_/        _/        _/_/_/    
+//
+// Ennova CFD to FOAM Converter
+// Copyright (C) 2023 Ennova Technologies Inc. (www.ennova-cfd.com)
+// Build Version 1.9.2 - win64 7/20/2023
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FoamFile
+{
+	version    2.0;
+	format    ascii;
+	class    volScalarField;
+	object    p;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+dimensions    [ 0 2 -2 0 0 0 0 ];
+internalField    uniform 0;
+boundaryField
+{
+	#includeEtc    "caseDicts/setConstraintTypes";
+	im
+	{
+		type    zeroGradient;
+	}
+
+	domain
+	{
+		type    zeroGradient;
+	}
+
+}
+
